@@ -6,7 +6,7 @@
 #include "include/lib/TrueHUDAPI.h"
 #include "include/lib/PrecisionAPI.h"
 #include "include/settings.h"
-#include "include/blockCommitment.h"
+//#include "include/blockCommitment.h"
 /*Combat tweaks to make Skyrim's melee combat feel like AC:Valhalla.*/
 class ValhallaCombat
 {
@@ -71,7 +71,8 @@ public:
 		if (update_StunHandler) {
 			stunHandler::GetSingleton()->update();
 		}
-		blockCommitment::GetSingleton()->update();
+		// TODO: Figure out what dTry wanted to do with Block Commitment.
+		//blockCommitment::GetSingleton()->update();
 		//if (update_balanceHandler) {
 			//balanceHandler::GetSingleton()->update();
 		//}

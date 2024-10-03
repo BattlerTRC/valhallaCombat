@@ -43,6 +43,7 @@ add_library(
 	"${ROOT_DIR}/.editorconfig"
 )
 
+
 target_compile_features(
 	"${PROJECT_NAME}"
 	PRIVATE
@@ -56,8 +57,6 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 			"/sdl"	# Enable Additional Security Checks
 			"/utf-8"	# Set Source and Executable character sets to UTF-8
 			"/Zi"	# Debug Information Format
-
-			"/await"
 
 			"/permissive-"	# Standards conformance
 			"/Zc:preprocessor"	# Enable preprocessor conformance mode

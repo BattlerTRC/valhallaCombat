@@ -67,11 +67,11 @@ void settings::updateGameSettings() {
 	}
 	RE::Setting* bVal_TrueHudAPI_Acq = gsc->GetSetting("bVal_TrueHudAPI_Acq");
 	if (bVal_TrueHudAPI_Acq) {
-		bVal_TrueHudAPI_Acq->SetBool(ValhallaCombat::GetSingleton()->ersh_TrueHUD != nullptr);
+		bVal_TrueHudAPI_Acq->data.b = ValhallaCombat::GetSingleton()->ersh_TrueHUD != nullptr;
 	}
 	RE::Setting* bVal_TrueHUDAPI_SpecialMeter_Acq = gsc->GetSetting("bVal_TrueHUDAPI_SpecialMeter_Acq");
 	if (bVal_TrueHUDAPI_SpecialMeter_Acq) {
-		bVal_TrueHUDAPI_SpecialMeter_Acq->SetBool(facts::TrueHudAPI_HasSpecialBarControl);
+		bVal_TrueHUDAPI_SpecialMeter_Acq->data.b = facts::TrueHudAPI_HasSpecialBarControl;
 	}
 	logger::info("...done");
 }

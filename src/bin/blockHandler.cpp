@@ -183,7 +183,7 @@ void blockHandler::OnPcSuccessfulTimedBlock() {
 
 bool blockHandler::isInBlockAngle(RE::Actor* blocker, RE::TESObjectREFR* a_obj) 
 {
-	auto angle = blocker->GetHeadingAngle(a_obj);
+	auto angle = blocker->GetHeadingAngle(a_obj->GetPosition(), false);
 	return (angle <= data::fCombatHitConeAngle && angle >= -data::fCombatHitConeAngle);
 }
 

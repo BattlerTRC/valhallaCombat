@@ -278,9 +278,11 @@ namespace inlineUtils
 		const char* strVal = str.c_str();
 		char* endVal = NULL;
 		long ret = strtol(strVal, &endVal, 0);
-		if (ret == LONG_MAX || ret == LONG_MIN || (int)endVal != (int)strVal + strlen(strVal))
+
+		if (ret == LONG_MAX || ret == LONG_MIN || endVal != strVal + strlen(strVal))
 			return false;
-		value = ret;
+
+		value = static_cast<int>(ret); 
 		return true;
 	}
 }

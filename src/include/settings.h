@@ -13,7 +13,7 @@ class settings
 	class UpdateHandler : public RE::BSTEventSink<SKSE::ModCallbackEvent>
 	{
 	public:
-		virtual EventResult ProcessEvent(const SKSE::ModCallbackEvent* a_event, RE::BSTEventSource<SKSE::ModCallbackEvent>* a_eventSource)
+		virtual EventResult ProcessEvent(const SKSE::ModCallbackEvent* a_event, RE::BSTEventSource<SKSE::ModCallbackEvent>*)
 		{
 			if (!a_event) {
 				return EventResult::kContinue;
@@ -32,11 +32,11 @@ class settings
 			auto eventSource = SKSE::GetModCallbackEventSource();
 
 			if (!eventSource) {
-				ERROR("EventSource not found!");
+				logger::error("EventSource not found!");
 				return false;
 			}
 			eventSource->AddEventSink(&singleton);
-			INFO("Register {}", typeid(singleton).name());
+			logger::info("Register {}", typeid(singleton).name());
 			return true;
 		}
 	};

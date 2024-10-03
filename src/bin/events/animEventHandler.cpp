@@ -20,7 +20,7 @@ constexpr uint32_t operator"" _h(const char* str, size_t size) noexcept
 	return hash(str, size);
 }
 
-void animEventHandler::ProcessEvent(RE::BSTEventSink<RE::BSAnimationGraphEvent>* a_sink, RE::BSAnimationGraphEvent* a_event, RE::BSTEventSource<RE::BSAnimationGraphEvent>* a_eventSource)
+void animEventHandler::ProcessEvent(RE::BSTEventSink<RE::BSAnimationGraphEvent>*, RE::BSAnimationGraphEvent* a_event, RE::BSTEventSource<RE::BSAnimationGraphEvent>*)
 {
 	if (!a_event->holder) {
 		return;

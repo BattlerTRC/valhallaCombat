@@ -130,7 +130,7 @@ void Utils::Actor::safeRemovePerk(RE::BGSPerk* a_perk, RE::Actor* a_actor)
 
 bool Utils::Actor::isBackFacing(RE::Actor* actor1, RE::Actor* actor2)
 {
-	auto angle = actor1->GetHeadingAngle(actor2);
+	auto angle = actor1->GetHeadingAngle(actor2->GetPosition(), false);
 	if (90 < angle || angle < -90) {
 		return true;
 	} else {
@@ -150,7 +150,7 @@ bool Utils::Actor::canBlock(RE::Actor* a_actor)
 		return true;
 	}
 	RE::ActorState* state = a_actor->AsActorState();
-	return !isJumping(a_actor) && state->GetKnockState() == RE::KNOCK_STATE_ENUM::kNormal && state->GetAttackState() == RE::ATTACK_STATE_ENUM::kNone && !state->IsSwimming() && state->IsWeaponDrawn() && !state->IsSprinting() && !state->IsStaggered();
+	return !isJumping(a_actor) && state->GetKnockState() == RE::KNOCK_STATE_ENUM::kNormal && state->GetAttackState() == RE::ATTACK_STATE_ENUM::kNone && !state->IsSwimming() && state->IsWeaponDrawn() && !state->IsSprinting() && !state->actorState2.staggered;
 }
 
 bool Utils::Actor::getGraphVariable(bool& r_gv, RE::Actor* a_actor, const RE::BSFixedString& a_variableName)

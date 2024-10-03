@@ -217,7 +217,7 @@ namespace Hooks
 		static inline REL::Relocation<decltype(processHit)> _ProcessHit;
 	};
 
-	class Hook_GetWantBlock
+	/*class Hook_GetWantBlock
 	{
 	public:
 		static void install()
@@ -235,7 +235,7 @@ namespace Hooks
 
 		static inline REL::Relocation<decltype(GetWantBlock)> _GetWantBlock;
 
-	};
+	};*/
 
 	class Hook_OnAttackAction
 	{
@@ -267,7 +267,7 @@ namespace Hooks
 		Hook_OnProjectileCollision::install();
 		Hook_OnMeleeCollision::install();
 		Hook_OnAttackAction::install();
-		Hook_GetWantBlock::install();
+		//Hook_GetWantBlock::install();
 		Hook_AttackBlockHandler_OnProcessButton::install();
 		logger::info("...done");
 	}

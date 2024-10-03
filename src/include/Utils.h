@@ -40,7 +40,7 @@ namespace Utils
 	namespace AvOwner
 	{
 		inline RE::Actor* asActor(RE::ActorValueOwner* a_avOwner) {
-			return &REL::RelocateParentIfNewer<RE::Actor>(SKSE::RUNTIME_SSE_1_6_629, a_avOwner, 0xB0, 0xB8);
+			return &REL::RelocateMemberIfNewer<RE::Actor>(SKSE::RUNTIME_SSE_1_6_629, a_avOwner, 0xB0, 0xB8);
 		}
 	}
 }
